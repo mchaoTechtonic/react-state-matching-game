@@ -22,7 +22,7 @@ class App extends Component {
           playing={this.state.playing}
           numTiles={this.state.numTiles}
         />
-        <Board />}
+        <Board numTiles={this.state.numTiles} tiles={this.state.tiles} />
       </div>
     );
   }
