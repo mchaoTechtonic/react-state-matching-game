@@ -20,7 +20,7 @@ class App extends Component {
       playing: true,
       previousTileIndex: null,
       toBeCleared: null,
-      tiles: createTiles(this.state.numTiles),
+      tiles: createTiles(this.state.numTiles, this.handleTileClicked),
     }));
   }
   handleTileClicked(id, color) {
@@ -31,6 +31,7 @@ class App extends Component {
         [tiles[toBeCleared[0]].selected, tiles[toBeCleared[1]].selected] = [false, false];
         toBeCleared = null;
       }
+      tiles[selectedTileIndex].selected = true;
       if (previousTileIndex !== null) {
         const previousTile = tiles[previousTileIndex];
         const selectedTile = tiles[selectedTileIndex];
